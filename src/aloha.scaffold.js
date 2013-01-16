@@ -6,47 +6,56 @@ module.exports = function( _, anvil ) {
 
     "use strict";
 
-    var root = __dirname;
+    var root = __dirname + "/templates/plugin/";
 
     anvil.scaffold( {
         type: "aloha:plugin",
         description: "creates an aloha editor plugin",
         prompt: [{
             name: "path",
-            description: "The path where Aloha is installed. For example: /js/aloha",
+            description: "The path where Aloha is installed. For example: /js/aloha:",
             required: true
         }, {
             name: "name",
-            description: "Your plugin name",
+            description: "Your plugin name:",
             required: true
         }],
         output: {
 
-            // Plugin
-            "{{path}}/aloha/plugins/extra/{{name}}/lib/{{name}}-plugin.js": anvil.scaffold.file( root + "/templates/plugin/plugin.js" ),
+            // Path
+            "{{path}}/aloha/plugins/extra/{{name}}/": {
 
-            // i18n
-            "{{path}}/aloha/plugins/extra/{{name}}/nls/i18n.js": anvil.scaffold.file( root + "/templates/plugin/i18n.js" ),
-            "{{path}}/aloha/plugins/extra/{{name}}/nls/ca/i18n.js": anvil.scaffold.file( root + "/templates/plugin/i18n.sub.js" ),
-            "{{path}}/aloha/plugins/extra/{{name}}/nls/de/i18n.js": anvil.scaffold.file( root + "/templates/plugin/i18n.sub.js" ),
-            "{{path}}/aloha/plugins/extra/{{name}}/nls/mk/i18n.js": anvil.scaffold.file( root + "/templates/plugin/i18n.sub.js" ),
-            "{{path}}/aloha/plugins/extra/{{name}}/nls/pt-br/i18n.js": anvil.scaffold.file( root + "/templates/plugin/i18n.sub.js" ),
-            "{{path}}/aloha/plugins/extra/{{name}}/nls/ru/i18n.js": anvil.scaffold.file( root + "/templates/plugin/i18n.sub.js" ),
-            "{{path}}/aloha/plugins/extra/{{name}}/nls/uk/i18n.js": anvil.scaffold.file( root + "/templates/plugin/i18n.sub.js" ),
-            "{{path}}/aloha/plugins/extra/{{name}}/nls/zn-hans/i18n.js": anvil.scaffold.file( root + "/templates/plugin/i18n.sub.js" ),
+                // The Plugin
+                "lib/{{name}}-plugin.js": anvil.scaffold.file( root + "/templates/plugin/plugin.js" ),
 
-            // CSS
-            "{{path}}/aloha/plugins/extra/{{name}}/css/attributes.css": anvil.scaffold.file( root + "/templates/plugin/attributes.css" ),
+                // i18n
+                "nls/": {
+                    "i18n.js": anvil.scaffold.file( root + "i18n.js" ),
+                    "ca/i18n.js": anvil.scaffold.file( root + "i18n.sub.js" ),
+                    "de/i18n.js": anvil.scaffold.file( root + "i18n.sub.js" ),
+                    "mk/i18n.js": anvil.scaffold.file( root + "i18n.sub.js" ),
+                    "pt-br/i18n.js": anvil.scaffold.file( root + "i18n.sub.js" ),
+                    "ru/i18n.js": anvil.scaffold.file( root + "i18n.sub.js" ),
+                    "uk/i18n.js": anvil.scaffold.file( root + "i18n.sub.js" ),
+                    "zn-hans/i18n.js": anvil.scaffold.file( root + "i18n.sub.js" )
+                },
 
-            // Bare Directories (How embarrassing!)
-            "{{path}}/aloha/plugins/extra/{{name}}/img/empty": anvil.scaffold.file( root + "/templates/plugin/empty" ),
-            "{{path}}/aloha/plugins/extra/{{name}}/doc/empty": anvil.scaffold.file( root + "/templates/plugin/empty" ),
-            "{{path}}/aloha/plugins/extra/{{name}}/res/empty": anvil.scaffold.file( root + "/templates/plugin/empty" ),
-            "{{path}}/aloha/plugins/extra/{{name}}/vendor/empty": anvil.scaffold.file( root + "/templates/plugin/empty" ),
+                // CSS
+                "css/attributes.css": anvil.scaffold.file( root + "attributes.css" ),
 
-            // Tests
-            "{{path}}/aloha/plugins/extra/{{name}}/test/index.html": anvil.scaffold.file( root + "/templates/plugin/qunit.html" ),
-            "{{path}}/aloha/plugins/extra/{{name}}/test/qunit.js": anvil.scaffold.file( root + "/templates/plugin/qunit.js" )
+                // Bare Directories (How embarrassing!)
+                "img/empty": anvil.scaffold.file( root + "empty" ),
+                "doc/empty": anvil.scaffold.file( root + "empty" ),
+                "res/empty": anvil.scaffold.file( root + "empty" ),
+                "vendor/empty": anvil.scaffold.file( root + "empty" ),
+
+                // Tests
+                "test/": {
+                    "index.html": anvil.scaffold.file( root + "qunit.html" ),
+                    "qunit.js": anvil.scaffold.file( root + "qunit.js" )
+                }
+
+            }
 
         }
     });

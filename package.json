@@ -1,18 +1,24 @@
 {
   "name": "anvil.scaffold.aloha",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Scaffold for Aloha Editor plugins",
   "main": "./lib/aloha.scaffold.js",
   "scripts": {
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jcreamer898/anvil.scaffold.aloha.git"
+    "url": "git://github.com/tysoncadenhead/anvil.scaffold.aloha.git"
   },
   "keywords": [
     "anvil",
     "aloha",
     "scaffold"
+  ],
+  "dependencies": {
+    "anvil.js": ">=0.9.0-RC2"
+  },
+  "requiredPlugins": [
+      "anvil.scaffold"
   ],
   "author": "Tyson Cadenhead",
   "license": "MIT"
