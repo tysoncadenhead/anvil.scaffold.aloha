@@ -4,8 +4,6 @@ var path = require( "path" );
 
 module.exports = function( _, anvil ) {
 
-    "use strict";
-
     var root = __dirname + "/templates/plugin/";
 
     anvil.scaffold( {

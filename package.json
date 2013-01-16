@@ -1,6 +1,6 @@
 {
   "name": "anvil.scaffold.aloha",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Scaffold for Aloha Editor plugins",
   "main": "./lib/aloha.scaffold.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "scaffold"
   ],
   "dependencies": {
-    "anvil.js": ">=0.9.0-RC2"
+    "anvil.js": ">=0.9.0-RC4"
   },
   "requiredPlugins": [
       "anvil.scaffold"
