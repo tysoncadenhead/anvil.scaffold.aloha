@@ -21,13 +21,13 @@ module.exports = function( _, anvil ) {
         output: {
 
             // Path
-            "{{path}}/aloha/plugins/extra/{{name}}/": {
+            "{{path}}/aloha/plugins/extra/{{name}}": {
 
                 // The Plugin
                 "lib/{{name}}-plugin.js": anvil.scaffold.file( root + "/templates/plugin/plugin.js" ),
 
                 // i18n
-                "nls/": {
+                "nls": {
                     "i18n.js": anvil.scaffold.file( root + "i18n.js" ),
                     "ca/i18n.js": anvil.scaffold.file( root + "i18n.sub.js" ),
                     "de/i18n.js": anvil.scaffold.file( root + "i18n.sub.js" ),
@@ -48,7 +48,7 @@ module.exports = function( _, anvil ) {
                 "vendor/empty": anvil.scaffold.file( root + "empty" ),
 
                 // Tests
-                "test/": {
+                "test": {
                     "index.html": anvil.scaffold.file( root + "qunit.html" ),
                     "qunit.js": anvil.scaffold.file( root + "qunit.js" )
                 }
