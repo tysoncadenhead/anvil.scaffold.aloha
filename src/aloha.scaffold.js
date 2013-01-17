@@ -1,12 +1,14 @@
 /*jslint node: true */
 
-var path = require( "path" );
+var path = require( "path" ),
+    root = path.resolve( __dirname, "../lib/template/plugin/" );
+
+    console.log(root);
+
 
 module.exports = function( _, anvil ) {
 
     "use strict";
-
-    var root = path.resolve( __dirname, "../lib/template/plugin/" );
 
     anvil.scaffold( {
         type: "aloha:plugin",
@@ -26,7 +28,10 @@ module.exports = function( _, anvil ) {
             "{{path}}/aloha/plugins/extra/{{name}}": {
 
                 // The Plugin
-                "lib/{{name}}-plugin.js": anvil.scaffold.file( root + "plugin.js" ),
+                "lib/{{name}}-plugin.js": function () {
+                    console.log(root + "plugin.js");
+                    return anvil.scaffold.file( root + "plugin.js" );
+                },
 
                 // i18n
                 "nls": {
