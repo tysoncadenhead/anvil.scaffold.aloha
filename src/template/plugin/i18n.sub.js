@@ -1,2 +1,4 @@
+/*global define */
+
 define({
 });
