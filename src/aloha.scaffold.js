@@ -4,14 +4,14 @@ var path = require( "path" );
 
 module.exports = function( _, anvil ) {
 
-    var root = __dirname + "/templates/plugin/";
+    var root = path.resolve( __dirname, "../" ) + "/lib/templates/plugin/";
 
     anvil.scaffold( {
         type: "aloha:plugin",
         description: "creates an aloha editor plugin",
         prompt: [{
             name: "path",
-            description: "The path where Aloha is installed. For example: /js/aloha:",
+            description: "The path where Aloha is installed. For example: js/aloha:",
             required: true
         }, {
             name: "name",
