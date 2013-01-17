@@ -6,9 +6,7 @@ module.exports = function( _, anvil ) {
 
     "use strict";
 
-    var root = path.resolve( __dirname, "../lib/templates/plugin/" );
-
-    console.log(root);
+    var root = path.resolve( __dirname, "../lib/template/plugin/" );
 
     anvil.scaffold( {
         type: "aloha:plugin",
