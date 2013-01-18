@@ -1,0 +1,44 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+       <head>
+              <title>{{name}}</title>
+ 
+              <!-- load the jQuery and require.js libraries -->
+              <script type="text/javascript" src="http://cdn.aloha-editor.org/latest/lib/require.js"></script>
+              <script type="text/javascript" src="http://cdn.aloha-editor.org/latest/lib/vendor/jquery-1.7.2.js"></script>
+ 
+              <!-- load the Aloha Editor core and some plugins -->
+              <script type="text/javascript">
+                var Aloha = {
+                  settings: {
+                    toolbar: {
+                      tabs: [{
+                        label: "{{name}}",
+                        components: [ "{{name}}" ]
+                      }]
+                    }
+                  }
+                };
+              </script>
+              <script src="../../../../lib/aloha.js"
+                                   data-aloha-plugins="common/ui, extra/{{name}}">
+              </script>
+               
+              <!-- load the Aloha Editor CSS styles -->
+              <link href="../../../../css/aloha.css" rel="stylesheet" type="text/css" />
+ 
+              <!-- make all elements with class="editable" editable with Aloha Editor -->
+              <script type="text/javascript">
+                     Aloha.ready( function() {
+                            var $ = Aloha.jQuery;
+                            $(".editable").aloha();
+                     });
+              </script>
+       </head>
+       <body>
+              <div class="editable">
+                <p><h1>Lorem ipsum dolor</h1> sit amet, consectetur adipiscing elit. Nullam vitae ipsum nulla. Praesent odio ante, imperdiet at posuere quis, pretium ut libero. Proin iaculis urna eget tellus feugiat vel sollicitudin nulla sagittis. Integer et diam elit, in rhoncus odio. Fusce et erat quam. In consectetur lacinia ligula, quis auctor mi elementum a. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; <strong>In aliquam</strong> molestie tortor sit amet adipiscing. Suspendisse suscipit volutpat porttitor. Nullam lobortis facilisis elementum.</p>
+                <p>Nunc quam nibh, eleifend et sagittis ut, mollis et nisi. Phasellus consectetur semper volutpat. Mauris lorem dolor, rhoncus quis sagittis quis, convallis et neque. Nunc viverra, arcu nec mattis laoreet, dui odio tempus erat, eget feugiat ipsum eros gravida massa. Quisque vel metus nec urna placerat rutrum. Nulla ante turpis, viverra eget porttitor mattis, facilisis sed erat. Nulla nec erat orci, volutpat volutpat neque. Vestibulum a risus in elit sodales placerat. Morbi ut est nulla. Vivamus lobortis arcu eget eros volutpat fermentum. Sed sollicitudin justo id nisl suscipit porta. Maecenas id erat et leo ultrices tincidunt. Morbi justo mauris, fringilla sit amet porttitor nec, pharetra eu purus. Mauris hendrerit sodales facilisis. Aliquam adipiscing est et tortor tristique quis euismod tellus pulvinar. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+              </div>
+       </body>
+</html>
