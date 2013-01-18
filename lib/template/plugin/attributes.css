@@ -5,5 +5,8 @@
 .button-{{name}} {
     width: 48px;
     height: 48px;
-    background: url(../img/icon.png) no-repeat;
+}
+
+.button-{{name}}:after {
+    content: "{{name}}";
 }
